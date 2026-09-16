@@ -1,2 +1,0 @@
-# opalops-it
-OpalOps IT
