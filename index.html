@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpalOps IT | Event Technology Infrastructure Support — NY/NJ</title>
+  <meta name="description" content="On-site event technology infrastructure support: registration systems, network & Wi-Fi deployment, device support, and real-time troubleshooting. NYC and NJ.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #ede9e2; --black: #0a0a0a; --gold: #a07a10; --gold-light: #c9a227; --white: #ffffff; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--black); overflow-x: hidden; }
+
+    /* NAV */
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid rgba(10,10,10,0.1); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--black); text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: 14px; color: rgba(10,10,10,0.5); text-decoration: none; letter-spacing: .5px; text-transform: uppercase; transition: color .2s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-right { display: flex; gap: 20px; align-items: center; margin-left: 16px; flex-shrink: 0; }
+    .nav-cta { font-size: 14px; font-weight: 600; padding: 9px 18px; border: 1.5px solid var(--gold); color: var(--gold); border-radius: 2px; text-decoration: none; letter-spacing: .5px; text-transform: uppercase; transition: background .2s, color .2s; white-space: nowrap; cursor: pointer; }
+    .nav-cta:hover { background: var(--gold); color: var(--cream); }
+
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--black); border-radius: 2px; }
+    .nav-drawer { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 32px; padding: 24px; }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a { font-size: 22px; font-weight: 600; color: var(--black); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: color .2s; }
+    .nav-drawer a:hover { color: var(--gold); }
+    .nav-drawer .drawer-cta { margin-top: 8px; padding: 16px 40px; background: var(--gold); color: var(--cream); font-size: 16px; font-weight: 700; border-radius: 2px; cursor: pointer; border: none; }
+    .drawer-close { position: absolute; top: 18px; right: 20px; background: none; border: none; cursor: pointer; font-size: 28px; color: var(--black); line-height: 1; }
+
+    /* HERO */
+    .hero { position: relative; background: #0a0a0a; border-bottom: 1px solid rgba(10,10,10,0.08); padding: 96px 52px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; }
+    .hero-tag::before { content: ''; width: 22px; height: 1.5px; background: var(--gold-light); display: block; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 50px; line-height: 1.1; letter-spacing: -1.5px; color: var(--cream); max-width: 760px; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero p { font-size: 18px; color: rgba(245,240,232,0.7); max-width: 560px; line-height: 1.75; margin-bottom: 32px; font-weight: 500; }
+    .hero-btns { display: flex; gap: 14px; align-items: center; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--gold-light); color: #0a0a0a; font-size: 14px; font-weight: 700; border-radius: 2px; text-decoration: none; transition: background .2s; cursor: pointer; border: none; }
+    .btn-primary:hover { background: #dbb840; }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; color: var(--cream); font-size: 14px; font-weight: 500; text-decoration: none; border: 1.5px solid rgba(245,240,232,0.3); border-radius: 2px; transition: border-color .2s, color .2s; }
+    .btn-secondary:hover { border-color: rgba(245,240,232,0.6); color: var(--cream); }
+
+    /* SECTIONS */
+    .section { padding: 80px 52px; border-bottom: 1px solid rgba(10,10,10,0.08); }
+    .section-white { background: var(--white); }
+    .section-cream { background: var(--cream); }
+    .section-dark { background: var(--black); }
+    .section-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .section-tag::before { content: ''; width: 18px; height: 1.5px; background: var(--gold); display: block; }
+    .section h2 { font-family: 'DM Serif Display', serif; font-size: 44px; line-height: 1.08; letter-spacing: -1.2px; color: var(--black); margin-bottom: 20px; max-width: 640px; }
+    .section h2 em { font-style: italic; color: var(--gold); }
+    .section-dark h2 { color: var(--cream); }
+    .section-dark h2 em { color: var(--gold-light); }
+    p.lead { font-size: 20px; font-weight: 500; color: rgba(10,10,10,0.6); line-height: 1.85; max-width: 580px; margin-bottom: 32px; }
+    .section-dark p.lead { color: rgba(245,240,232,0.6); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+
+    /* SERVICE CARDS */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; background: rgba(10,10,10,0.08); border: 1px solid rgba(10,10,10,0.08); margin-top: 48px; }
+    .service-card { padding: 40px 32px; background: var(--white); }
+    .service-card .icon { font-size: 28px; margin-bottom: 20px; color: var(--gold); }
+    .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--black); margin-bottom: 14px; }
+    .service-card p { font-size: 16px; font-weight: 500; color: rgba(10,10,10,0.6); line-height: 1.7; }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(10,10,10,0.08); border: 1px solid rgba(10,10,10,0.08); margin-top: 48px; }
+    .step { padding: 40px 32px; background: var(--cream); }
+    .step-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; margin-bottom: 16px; font-weight: 500; }
+    .step h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--black); margin-bottom: 12px; }
+    .step p { font-size: 18px; font-weight: 500; color: rgba(10,10,10,0.6); line-height: 1.7; }
+
+    /* PROOF GRID */
+    .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); margin-top: 48px; }
+    .proof-item { padding: 32px 28px; background: rgba(255,255,255,0.04); }
+    .proof-item h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold-light); margin-bottom: 12px; }
+    .proof-item p { font-size: 18px; font-weight: 500; color: rgba(245,240,232,0.8); line-height: 1.7; }
+
+    /* CTA STRIP */
+    .cta-strip { padding: 80px 52px; display: flex; align-items: center; justify-content: space-between; gap: 40px; background: var(--black); }
+    .cta-strip h2 { font-family: 'DM Serif Display', serif; font-size: 42px; color: var(--cream); line-height: 1.08; letter-spacing: -1px; margin-bottom: 10px; }
+    .cta-strip p { font-size: 20px; font-weight: 500; color: rgba(245,240,232,0.5); }
+    .cta-btns { display: flex; gap: 12px; flex-shrink: 0; }
+    .btn-gold { display: inline-flex; align-items: center; padding: 14px 30px; background: var(--gold-light); color: var(--black); font-size: 14px; font-weight: 700; border-radius: 2px; text-decoration: none; transition: background .2s; cursor: pointer; border: none; }
+    .btn-gold:hover { background: #dbb840; }
+
+    /* FOOTER */
+    .footer { padding: 36px 52px; display: flex; flex-direction: column; align-items: center; gap: 20px; border-top: 1px solid rgba(10,10,10,0.08); background: var(--cream); }
+    .footer-l { font-size: 12px; color: rgba(10,10,10,0.55); text-align: center; }
+    .footer-r { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-r a { font-size: 13px; color: rgba(10,10,10,0.65); text-decoration: none; transition: color .2s; font-weight: 500; }
+    .footer-r a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 56px 20px; }
+      .hero h1 { font-size: 32px; letter-spacing: -1px; }
+      .hero p { font-size: 15px; }
+      .hero-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+      .section { padding: 48px 20px; }
+      .two-col { grid-template-columns: 1fr; gap: 36px; }
+      .section h2 { font-size: 30px; letter-spacing: -.5px; }
+      p.lead { font-size: 18px; }
+      .steps, .proof-grid, .services-grid { grid-template-columns: 1fr; margin-top: 32px; }
+      .cta-strip { flex-direction: column; align-items: stretch; padding: 48px 20px; gap: 28px; }
+      .cta-btns { flex-direction: column; gap: 10px; }
+      .btn-gold { justify-content: center; }
+      .footer { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-drawer" id="navDrawer">
+    <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&#10005;</button>
+    <a href="#services" onclick="closeDrawer()">Services</a>
+    <a href="#how-it-works" onclick="closeDrawer()">How It Works</a>
+    <a href="#contact" onclick="closeDrawer()">Contact</a>
+    <button class="drawer-cta" onclick="openCrewModal(); closeDrawer();">Request a Quote &nbsp;→</button>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">OpalOps <span>IT</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-cta" onclick="openCrewModal()">Request a Quote</a>
+    </div>
+    <button class="nav-hamburger" onclick="openDrawer()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-tag">Event Technology Infrastructure</div>
+    <h1>On-site tech support that keeps your event <em>running.</em></h1>
+    <p>OpalOps IT provides on-site technology infrastructure support for conferences, trade shows, and corporate events — registration and check-in system setup, network and Wi-Fi deployment, device and printer support, and real-time troubleshooting throughout the event lifecycle.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary" onclick="openCrewModal()">Request a Quote &nbsp;→</a>
+      <a href="#services" class="btn-secondary">See Our Services</a>
+    </div>
+  </section>
+
+  <!-- Why OpalOps IT -->
+  <section class="section section-cream">
+    <div class="two-col">
+      <div>
+        <div class="section-tag">What we do</div>
+        <h2>Technology that works, <em>from doors-open to teardown.</em></h2>
+        <p class="lead">Event technology fails at the worst possible moment — during badge printing at a packed registration line, mid-setup with a network that won't hold. OpalOps IT is built to prevent that: we plan the technical footprint before your event, deploy it correctly, and stay on-site to keep it running.</p>
+        <p style="font-size: 18px; font-weight: 500; color: rgba(10,10,10,0.6); line-height: 1.7;">We work directly with event producers, venues, and corporate clients to make sure registration systems, networks, and on-site devices perform reliably before, during, and after the event.</p>
+      </div>
+      <div style="background: var(--white); padding: 32px; border-left: 4px solid var(--gold); display: flex; flex-direction: column; justify-content: center;">
+        <blockquote style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--black); font-style: italic; line-height: 1.5; margin: 0;">
+          "The tech should be invisible. You only notice it when it breaks — so we make sure it doesn't."
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section-white" id="services">
+    <div class="section-tag">Our services</div>
+    <h2>Event technology, <em>covered end to end.</em></h2>
+    <p class="lead">Four core service areas — scoped to the technical footprint of your event, not the guest experience around it.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">▧</div>
+        <h3>Pre-Event Technology Planning</h3>
+        <p>We work with your team ahead of time to map out technical requirements — device counts, network needs, registration flow, and power/layout logistics — so the site is ready to go before doors open. Includes a walkthrough or floor-plan review and a punch list for day-of setup.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">▤</div>
+        <h3>Workstation & Registration Setup</h3>
+        <p>On-site build-out of check-in stations, kiosks, badge printers, and staff workstations — cabling, power distribution, device staging, and layout execution to your registration vendor's specs.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">◈</div>
+        <h3>Network / Wi-Fi Deployment</h3>
+        <p>Setup and configuration of temporary event networks — access points, switches, and guest/staff SSIDs — sized to attendee load and venue constraints, with signal testing before go-live.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">▣</div>
+        <h3>Printer & Device Support</h3>
+        <p>On-site setup, troubleshooting, and consumables management (labels, ribbons, paper) for badge printers, ticket scanners, tablets, and check-in hardware throughout the event.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">↻</div>
+        <h3>On-Site Troubleshooting</h3>
+        <p>Dedicated tech support staff stationed on the floor for the event's duration to resolve connectivity, hardware, or registration-flow issues in real time — minimizing lines and downtime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section-cream" id="how-it-works">
+    <div class="section-tag">How it works</div>
+    <h2>Planned before you arrive. <em>Supported while you're there.</em></h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01 — Scope the footprint</div>
+        <h3>Pre-event planning</h3>
+        <p>Share your event size, venue, and technical needs. We map out the registration, network, and device requirements in advance.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02 — Deploy & test</div>
+        <h3>On-site setup</h3>
+        <p>We arrive ahead of doors-open to deploy and test every system — network, registration stations, devices — before attendees show up.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03 — Support the event</div>
+        <h3>Live troubleshooting</h3>
+        <p>We stay on-site through the event to handle issues in real time, then manage teardown once it wraps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="section section-dark">
+    <div class="section-tag" style="color: var(--gold-light);">Built right</div>
+    <h2 style="margin-bottom: 40px;">Professional coverage. <em>You're protected.</em></h2>
+    <div class="proof-grid">
+      <div class="proof-item">
+        <h3>Insured Operations</h3>
+        <p>General liability and technology professional liability coverage in place for event infrastructure work.</p>
+      </div>
+      <div class="proof-item">
+        <h3>Direct On-Site Support</h3>
+        <p>A dedicated technical point of contact on-site for the duration of your event — not a remote help desk.</p>
+      </div>
+      <div class="proof-item">
+        <h3>Pre-Event Planning</h3>
+        <p>Network and registration footprint scoped and tested before your event starts, not improvised on the day.</p>
+      </div>
+      <div class="proof-item">
+        <h3>Vendor-Agnostic Setup</h3>
+        <p>We work with the registration platforms, devices, and network hardware you already use or plan to bring in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <div class="cta-strip" id="contact">
+    <div>
+      <h2>Ready to plan your event's tech?</h2>
+      <p>Tell us your event scope — we'll follow up with a plan and quote.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+        <a href="tel:8444781693" style="font-size: 18px; font-weight: 600; color: var(--gold-light); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <span>☎</span> (844) 478-1693
+        </a>
+        <a href="mailto:accounts@opalops.us" style="font-size: 18px; font-weight: 600; color: var(--gold-light); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <span>✉</span> accounts@opalops.us
+        </a>
+      </div>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn-gold" onclick="openCrewModal()">Request a Quote &nbsp;→</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-r">
+      <a href="index.html">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-l">&copy; 2026 RRM Services LLC &middot; OpalOps IT &middot; Woodside, NY &middot; (844) 478-1693</div>
+  </footer>
+
+  <!-- REQUEST QUOTE MODAL -->
+  <div id="crewFormModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 640px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-height: 90vh; overflow-y: auto;">
+      <button onclick="document.getElementById('crewFormModal').style.display='none'" style="float: right; font-size: 24px; border: none; background: none; cursor: pointer; color: #999;">&times;</button>
+      <p style="font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 16px;">Request an IT Infrastructure Quote</p>
+      <p style="font-size: 15px; color: rgba(10,10,10,0.6); margin-bottom: 8px;">Replace this block with your Tally or HubSpot embed for the OpalOps IT quote form.</p>
+    </div>
+  </div>
+
+  <script>
+    function openDrawer() {
+      document.getElementById('navDrawer').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      document.getElementById('navDrawer').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('navDrawer').addEventListener('click', function(e) {
+      if (e.target === this) closeDrawer();
+    });
+    function openCrewModal() {
+      document.getElementById('crewFormModal').style.display = 'flex';
+    }
+    document.getElementById('crewFormModal').addEventListener('click', function(e) {
+      if (e.target === this) document.getElementById('crewFormModal').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
